@@ -1,0 +1,38 @@
+{
+  "id": "roadmap-ingestion-indexing-001",
+  "title": "Roadmap: Full Source Ingestion and Indexing",
+  "description": "Roadmap item for implementing full ingestion and indexing of all relevant sources (GitHub, Notion, local files, AI documents, MCP profiles, governance, tangents, schemas, prompts, policies) to support advanced queries and pre-creation checks.",
+  "status": "deferred",
+  "priority": "medium",
+  "reason": "Important for long-term system coherence and retrieval, but dependent on earlier foundational systems.",
+  "dependencies": [
+    "indexing-001",
+    "idea-capture-001",
+    "foundation-readiness-001",
+    "event-monitor-and-historian-001"
+  ],
+  "governance_reference": [
+    "constitution/indexing-governance.md",
+    "constitution/idea-capture-governance.md",
+    "constitution/foundation-governance.md"
+  ],
+  "expected_benefits": [
+    "complete visibility into organism DNA",
+    "fast retrieval of past work",
+    "better investor and patent narratives",
+    "stronger SSOT",
+    "less reinvention"
+  ],
+  "trigger_conditions": [
+    "Stage 3 orchestrator maturity",
+    "basic indexing system implemented",
+    "event DB populated with meaningful history"
+  ],
+  "created_at": "2026-06-14T13:00:00-04:00",
+  "related_governance": [
+    "constitution/indexing-governance.md",
+    "constitution/idea-capture-governance.md",
+    "constitution/foundation-governance.md",
+    "constitution/eventlog-governance.md"
+  ]
+}

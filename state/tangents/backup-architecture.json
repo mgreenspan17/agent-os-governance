@@ -1,0 +1,30 @@
+{
+  "id": "backup-architecture-001",
+  "title": "Postgres SSOT Backup Architecture",
+  "description": "Design and implement a multi-layered backup and replication system for the SSOT.",
+  "status": "deferred",
+  "priority": "high",
+  "reason": "Critical for long-term durability but not required during early organism development.",
+  "dependencies": [
+    "schema-definition",
+    "infrastructure-layer",
+    "pipeline-maturity"
+  ],
+  "proposed_architecture": {
+    "local": "RAID-protected primary Postgres instance",
+    "offsite": "Nightly encrypted pg_dump to Backblaze B2",
+    "snapshot": "Weekly snapshot to Google Drive or OneDrive",
+    "replication": "Optional streaming replica to $5 cloud VM",
+    "archival": "Optional encrypted weekly dumps to IPFS/Filecoin"
+  },
+  "trigger_conditions": [
+    "SSOT schema finalized",
+    "Ingestion pipeline operational",
+    "Organism reaches Stage 3 maturity"
+  ],
+  "created_at": "2026-06-14T11:38:00-04:00",
+  "related_governance": [
+    "constitution/foundation-governance.md",
+    "constitution/eventlog-governance.md"
+  ]
+}

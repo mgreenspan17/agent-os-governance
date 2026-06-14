@@ -1,0 +1,33 @@
+{
+  "id": "foundation-readiness-001",
+  "title": "Implement Foundation Readiness Evaluation System",
+  "description": "Implement a system that evaluates whether new ideas, features, and governance rules can be built on the current architecture, and classifies non-ready ideas as tangents with dependencies and trigger conditions.",
+  "status": "deferred",
+  "priority": "high",
+  "reason": "Essential to prevent the organism from becoming a bin of parts and to ensure staged, coherent growth.",
+  "dependencies": [
+    "orchestrator",
+    "event-monitor-and-historian-001",
+    "intelligence-consolidation-001",
+    "agent-capability-profiles",
+    "tree-brain-governance-implementation-001"
+  ],
+  "governance_reference": "constitution/foundation-governance.md",
+  "expected_benefits": [
+    "staged development",
+    "stable foundation",
+    "no bin-of-parts syndrome",
+    "clear build-vs-defer decisions",
+    "coherent organism evolution"
+  ],
+  "trigger_conditions": [
+    "orchestrator reaches Stage 2 maturity",
+    "basic event monitoring operational",
+    "initial intelligence consolidation implemented"
+  ],
+  "created_at": "2026-06-14T12:45:00-04:00",
+  "related_governance": [
+    "constitution/foundation-governance.md",
+    "constitution/eventlog-governance.md"
+  ]
+}

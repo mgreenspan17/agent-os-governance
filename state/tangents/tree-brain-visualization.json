@@ -1,0 +1,35 @@
+{
+  "id": "tree-brain-visualization-001",
+  "title": "Tree-Brain Visualization System",
+  "description": "Implement a real-time, infinitely zoomable visualization of the organism, including multi-process context, multi-agent relationships, and natural language node translation.",
+  "status": "deferred",
+  "priority": "high",
+  "reason": "Essential for system cognition and user understanding, but requires orchestrator maturity and event pipeline stability.",
+  "dependencies": [
+    "event-monitor",
+    "dependency-graph",
+    "agent-capability-profiles",
+    "visualization-engine",
+    "natural-language-node-translator"
+  ],
+  "governance_reference": "constitution/visual-governance.md",
+  "expected_benefits": [
+    "shared mental model between humans and agents",
+    "real-time system awareness",
+    "contextual clarity",
+    "multi-process visibility",
+    "predictive navigation",
+    "infinite zoom"
+  ],
+  "trigger_conditions": [
+    "orchestrator reaches Stage 3 maturity",
+    "event pipeline operational",
+    "dependency graph implemented"
+  ],
+  "created_at": "2026-06-14T11:55:00-04:00",
+  "related_governance": [
+    "constitution/visual-governance.md",
+    "constitution/foundation-governance.md",
+    "constitution/eventlog-governance.md"
+  ]
+}

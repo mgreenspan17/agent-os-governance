@@ -1,0 +1,376 @@
+{
+  "id": "governance-action-events-2026-06-14",
+  "title": "Governance Action Events (Local Fallback)",
+  "description": "Local action log for governance and tangent file creation when direct Event DB writes are unavailable.",
+  "status": "recorded",
+  "related_governance": [
+    "constitution/eventlog-governance.md",
+    "constitution/foundation-governance.md",
+    "constitution/history-governance.md",
+    "constitution/idea-capture-governance.md",
+    "constitution/indexing-governance.md"
+  ],
+  "events": [
+    {
+      "id": "evt-20260614-124500-001",
+      "timestamp": "2026-06-14T12:45:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "governance_rule_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/foundation-governance.md"
+      },
+      "payload": {
+        "summary": "Added foundation governance with build-vs-defer and biological staged activation rules."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/foundation-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/foundation-readiness.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-124501-002",
+      "timestamp": "2026-06-14T12:45:01-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "tangent_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "state/tangents/foundation-readiness.json"
+      },
+      "payload": {
+        "summary": "Added deferred foundation readiness implementation task."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/foundation-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/foundation-readiness.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-123000-003",
+      "timestamp": "2026-06-14T12:30:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "governance_rule_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/history-governance.md"
+      },
+      "payload": {
+        "summary": "Added customizable history requirements and history type governance."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/history-governance.md",
+          "constitution/event-governance.md",
+          "constitution/historian-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/history-query-layer.json",
+          "state/tangents/event-monitor-and-historian.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-123001-004",
+      "timestamp": "2026-06-14T12:30:01-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "tangent_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "state/tangents/history-query-layer.json"
+      },
+      "payload": {
+        "summary": "Added deferred history query layer task linked to event and historian capabilities."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/history-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/history-query-layer.json",
+          "state/tangents/event-monitor-and-historian.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-125000-005",
+      "timestamp": "2026-06-14T12:50:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "governance_rule_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/idea-capture-governance.md"
+      },
+      "payload": {
+        "summary": "Added idea capture pipeline governance for capture, classify, evaluate, archive, and deduplication."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/idea-capture-governance.md",
+          "constitution/foundation-governance.md",
+          "constitution/intelligence-consolidation-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/idea-capture-tangent.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-125001-006",
+      "timestamp": "2026-06-14T12:50:01-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "tangent_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "state/tangents/idea-capture-tangent.json"
+      },
+      "payload": {
+        "summary": "Added deferred implementation task for idea capture pipeline."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/idea-capture-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/idea-capture-tangent.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-125500-007",
+      "timestamp": "2026-06-14T12:55:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "governance_rule_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/indexing-governance.md"
+      },
+      "payload": {
+        "summary": "Added source ingestion/indexing governance and IF EXISTS pre-creation check rule."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/indexing-governance.md",
+          "constitution/idea-capture-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/indexing-tangent.json",
+          "state/tangents/roadmap-ingestion-indexing.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-125501-008",
+      "timestamp": "2026-06-14T12:55:01-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "tangent_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "state/tangents/indexing-tangent.json"
+      },
+      "payload": {
+        "summary": "Added deferred indexing implementation task."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/indexing-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/indexing-tangent.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-130000-009",
+      "timestamp": "2026-06-14T13:00:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "tangent_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "state/tangents/roadmap-ingestion-indexing.json"
+      },
+      "payload": {
+        "summary": "Added deferred roadmap item for full source ingestion and indexing rollout."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/indexing-governance.md",
+          "constitution/idea-capture-governance.md",
+          "constitution/foundation-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/roadmap-ingestion-indexing.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-132000-010",
+      "timestamp": "2026-06-14T13:20:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "governance_rule_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/eventlog-governance.md"
+      },
+      "payload": {
+        "summary": "Added EventLog governance defining immutable append-only SSOT and required event alignment fields."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/eventlog-governance.md",
+          "constitution/foundation-governance.md",
+          "constitution/history-governance.md",
+          "constitution/idea-capture-governance.md",
+          "constitution/indexing-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/event-monitor-and-historian.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-132001-011",
+      "timestamp": "2026-06-14T13:20:01-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "governance_rule_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/envelope-governance.md"
+      },
+      "payload": {
+        "summary": "Added envelope governance with mandatory message envelope fields and EventLog mapping rules."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/envelope-governance.md",
+          "constitution/eventlog-governance.md",
+          "constitution/event-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/event-monitor-and-historian.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-132002-012",
+      "timestamp": "2026-06-14T13:20:02-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "governance_rule_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/git-hygiene-governance.md"
+      },
+      "payload": {
+        "summary": "Added git hygiene governance for local repo scanning, unpushed change handling, and EventLog logging triggers."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/git-hygiene-governance.md",
+          "constitution/eventlog-governance.md",
+          "constitution/indexing-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/git-cleanup-cycle.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-132003-013",
+      "timestamp": "2026-06-14T13:20:03-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "tangent_added",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "state/tangents/git-cleanup-cycle.json"
+      },
+      "payload": {
+        "summary": "Added deferred git cleanup cycle tangent with governance dependencies and maintenance triggers."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/git-hygiene-governance.md",
+          "constitution/eventlog-governance.md",
+          "constitution/indexing-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/git-cleanup-cycle.json",
+          "state/tangents/indexing-tangent.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-132100-014",
+      "timestamp": "2026-06-14T13:21:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "file_updated",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/foundation-governance.md"
+      },
+      "payload": {
+        "summary": "Added conversation rules and related governance cross-links in foundation governance."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/foundation-governance.md",
+          "constitution/eventlog-governance.md",
+          "constitution/envelope-governance.md",
+          "constitution/git-hygiene-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/foundation-readiness.json"
+        ]
+      }
+    },
+    {
+      "id": "evt-20260614-133000-015",
+      "timestamp": "2026-06-14T13:30:00-04:00",
+      "actor": "Cody",
+      "system": "governance engine",
+      "type": "file_updated",
+      "context": {
+        "repo": "agent-os-governance",
+        "path": "constitution/*.md and state/tangents/*.json"
+      },
+      "payload": {
+        "summary": "Normalized cross-links by adding or refreshing Related Governance in constitution files and related_governance in tangent artifacts to reduce duplication and clarify intent boundaries."
+      },
+      "links": {
+        "related_governance": [
+          "constitution/foundation-governance.md",
+          "constitution/eventlog-governance.md",
+          "constitution/history-governance.md",
+          "constitution/idea-capture-governance.md",
+          "constitution/indexing-governance.md"
+        ],
+        "related_tangents": [
+          "state/tangents/indexing-tangent.json",
+          "state/tangents/idea-capture-tangent.json",
+          "state/tangents/history-query-layer.json",
+          "state/tangents/git-cleanup-cycle.json"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "git-cleanup-cycle-001",
+  "title": "Implement Git Cleanup Cycle",
+  "description": "Implement a recurring cleanup cycle that scans local repositories, detects unpushed commits and branches, and pushes or archives according to policy.",
+  "status": "deferred",
+  "priority": "high",
+  "reason": "Essential for repository hygiene, recoverability, and operational continuity across local environments.",
+  "dependencies": [
+    "eventlog-governance",
+    "git-hygiene-governance",
+    "indexing-governance"
+  ],
+  "governance_reference": [
+    "constitution/git-hygiene-governance.md",
+    "constitution/eventlog-governance.md",
+    "constitution/indexing-governance.md"
+  ],
+  "related_governance": [
+    "constitution/git-hygiene-governance.md",
+    "constitution/eventlog-governance.md",
+    "constitution/indexing-governance.md",
+    "constitution/foundation-governance.md"
+  ],
+  "related_tangents": [
+    "state/tangents/indexing-tangent.json",
+    "state/tangents/roadmap-ingestion-indexing.json"
+  ],
+  "trigger_conditions": [
+    "initial system setup",
+    "scheduled maintenance windows"
+  ],
+  "created_at": "2026-06-14T13:20:00-04:00"
+}

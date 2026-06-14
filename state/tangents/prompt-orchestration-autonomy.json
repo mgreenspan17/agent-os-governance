@@ -1,0 +1,32 @@
+{
+  "id": "prompt-orchestration-autonomy-001",
+  "title": "Implement Continuous Execution Prompt Strategy",
+  "description": "Modify the orchestrator so that it generates long, multi-step prompts for agents whenever no dependency requires waiting for output.",
+  "status": "deferred",
+  "priority": "high",
+  "reason": "Critical for system autonomy and throughput, but requires orchestrator maturity.",
+  "dependencies": [
+    "prompt-queue-engine",
+    "dependency-graph",
+    "agent-capability-profiles"
+  ],
+  "governance_reference": "constitution/prompt-orchestration-governance.md",
+  "expected_benefits": [
+    "reduced latency",
+    "increased concurrency",
+    "reduced human involvement",
+    "higher agent autonomy",
+    "fewer context switches"
+  ],
+  "trigger_conditions": [
+    "orchestrator reaches Stage 2 maturity",
+    "dependency graph implemented",
+    "agent capability profiles available"
+  ],
+  "created_at": "2026-06-14T11:41:00-04:00",
+  "related_governance": [
+    "constitution/prompt-orchestration-governance.md",
+    "constitution/foundation-governance.md",
+    "constitution/eventlog-governance.md"
+  ]
+}

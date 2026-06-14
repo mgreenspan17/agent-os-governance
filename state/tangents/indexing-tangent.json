@@ -1,0 +1,32 @@
+{
+  "id": "indexing-001",
+  "title": "Implement Source Ingestion and Indexing System",
+  "description": "Implement a system that ingests and indexes all relevant sources (repos, Notion, local files, AI documents, MCP profiles, governance, tangents, schemas, prompts, policies) and supports pre-creation checks to avoid duplicate intent.",
+  "status": "deferred",
+  "priority": "high",
+  "reason": "Essential to unify scattered DNA and prevent reinvention of existing ideas and rules.",
+  "dependencies": [
+    "idea-capture-001",
+    "foundation-readiness-001",
+    "event-monitor-and-historian-001",
+    "intelligence-consolidation-001"
+  ],
+  "governance_reference": "constitution/indexing-governance.md",
+  "expected_benefits": [
+    "unified governance map",
+    "duplicate intent reduction",
+    "better consolidation",
+    "faster retrieval",
+    "stronger SSOT"
+  ],
+  "trigger_conditions": [
+    "event schema stabilized",
+    "basic idea capture pipeline implemented"
+  ],
+  "created_at": "2026-06-14T12:55:00-04:00",
+  "related_governance": [
+    "constitution/indexing-governance.md",
+    "constitution/foundation-governance.md",
+    "constitution/eventlog-governance.md"
+  ]
+}

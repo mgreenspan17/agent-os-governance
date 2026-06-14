@@ -1,0 +1,35 @@
+{
+  "id": "intelligence-consolidation-001",
+  "title": "Implement Intelligence Consolidation Layer",
+  "description": "Implement continuous consolidation, deduplication, and summarization of all documents, governance rules, and ideas using a three-layer agent review stack.",
+  "status": "deferred",
+  "priority": "high",
+  "reason": "Essential for maintaining a clean SSOT and preventing governance drift, but requires orchestrator maturity and event pipeline stability.",
+  "dependencies": [
+    "event-monitor",
+    "document-ingestion-pipeline",
+    "governance-engine",
+    "agent-capability-profiles",
+    "natural-language-node-translator"
+  ],
+  "governance_reference": "constitution/intelligence-consolidation-governance.md",
+  "expected_benefits": [
+    "clean, unified SSOT",
+    "elimination of duplicate intent",
+    "continuous system clarity",
+    "reduced cognitive load",
+    "self-maintaining governance",
+    "automatic summarization"
+  ],
+  "trigger_conditions": [
+    "orchestrator reaches Stage 3 maturity",
+    "event pipeline operational",
+    "document ingestion pipeline implemented"
+  ],
+  "created_at": "2026-06-14T12:15:00-04:00",
+  "related_governance": [
+    "constitution/intelligence-consolidation-governance.md",
+    "constitution/foundation-governance.md",
+    "constitution/eventlog-governance.md"
+  ]
+}
