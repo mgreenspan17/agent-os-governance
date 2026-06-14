@@ -75,6 +75,70 @@ The following contracts are defined and should be implemented in this governance
 
 ---
 
+## Workspace Extraction Process
+
+### Purpose
+
+Workspace extraction is the read-only process of discovering, classifying, and cataloging Notion workspace pages as governance artifacts. It converts unstructured workspace content into structured classification records that can be referenced by the governance framework.
+
+### How It Works
+
+1. **Discover** — Scan Notion workspace pages and identify governance-relevant content.
+2. **Classify** — Assign each page to a category (e.g., `protocol`, `agent_boundary`, `prompt_governance`, `ingestion`, `observability`, `architecture`, `dna_principle`).
+3. **Extract** — Record the source title, link, category, and a verbatim excerpt for each page.
+4. **Store** — Write classification snapshots to `workspace-extraction/classification-YYYY-MM-DD.json`.
+5. **Commit** — Stage and commit the snapshot as a governance artifact.
+
+### Classification Categories
+
+| Category | Description | Example |
+|---|---|---|
+| `protocol` | Formal communication or data exchange specifications | Envelope Protocol, Notion Confirmation Protocol |
+| `agent_boundary` | Agent role definitions, governance charters, adoption packets | Multi-Agent Governance Charter, Agent Role Matrix |
+| `prompt_governance` | Prompt structure rules, delimiters, ID headers | G-PROMPT-STRUCT-1, G-PROMPT-DELIM-1 |
+| `ingestion` | Data source definitions, pipeline architecture | Unified Ingestion Pipeline, source registries |
+| `observability` | Monitoring, logging, metrics, tracing architecture | Phase F6 Observability, observability docs |
+| `governance_primitive` | Foundational governance models, routing, operating structure | Governance Layer, routing models |
+| `architecture` | System design, integration plans, stack definitions | Agent-OS Architecture Master, priority stacks |
+| `dna_principle` | Core organism principles, genesis documents | DNA Genesis, core insights |
+| `tangent_candidate` | Deferred ideas, workflows, inbox items | IDEA WORKFLOW, future feature candidates |
+| `glossary` | Terminology, definitions, reference material | System Glossary |
+| `versioning_rule` | Versioning conventions, changelog requirements | Versioning Model specifications |
+| `confirmation_protocol` | Approval, sign-off, or validation workflows | Notion Confirmation Protocol |
+
+### Output Format
+
+Each classification snapshot follows this structure:
+
+```json
+{
+  "classified_items": [
+    {
+      "source_title": "Page Title",
+      "source_link": "https://app.notion.com/p/<page-id>?pvs=1",
+      "category": "<classification category>",
+      "verbatim_excerpt": "Raw content excerpt from the page"
+    }
+  ]
+}
+```
+
+### Current Snapshots
+
+| File | Date | Items Classified |
+|---|---|---|
+| [classification-2026-06-14.json](workspace-extraction/classification-2026-06-14.json) | 2026-06-14 | 18 pages |
+
+### Governance Integration
+
+- Classification snapshots are **read-only artifacts** — they record what exists, they do not modify source systems.
+- Each classified item links back to its original Notion page for provenance.
+- The extraction process respects the **Implementation Pause Rule** — no destructive actions are taken on source pages.
+- Category assignments inform which constitution directory an artifact belongs in (`constitution/`, `state/tangents/`, `schemas/`, etc.).
+- Snapshots serve as input to the **Intelligence Consolidation** process for deduplication and merge analysis.
+
+---
+
 ## Implementation Pause Rule
 
 **Paused until further review:**
