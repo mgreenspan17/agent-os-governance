@@ -1,0 +1,71 @@
+{
+  "$id": "https://agent-os-governance/schemas/envelope.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Message Envelope",
+  "description": "Schema defining the mandatory envelope structure for all agent-to-agent and agent-to-system messages. Every message must be loggable as an EventLog entry.",
+  "type": "object",
+  "properties": {
+    "to": {
+      "type": "string",
+      "description": "Recipient identifier (agent ID, system name, or human user)."
+    },
+    "from": {
+      "type": "string",
+      "description": "Sender identifier (agent ID, system name, or human user)."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the message was sent."
+    },
+    "message_id": {
+      "type": "string",
+      "description": "UUID7 unique identifier for this message."
+    },
+    "blake3_hash": {
+      "type": "string",
+      "description": "BLAKE3 cryptographic hash of the message content for integrity verification."
+    },
+    "token_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of tokens in the message content."
+    },
+    "completion_time_estimate": {
+      "type": "string",
+      "description": "Estimated time to complete the task described in the message."
+    },
+    "agent_id": {
+      "type": "string",
+      "description": "Identifier of the agent that generated or is receiving this message."
+    },
+    "agent_capability_profile": {
+      "type": "string",
+      "description": "Capability profile of the agent (e.g., scout, analyst, architect, historian)."
+    },
+    "intent_classification": {
+      "type": "string",
+      "description": "Classification of the message intent (e.g., query, command, update, response, escalation)."
+    },
+    "correlation_id": {
+      "type": "string",
+      "description": "UUID or identifier linking this message to a related workflow or conversation thread."
+    },
+    "event_id": {
+      "type": "string",
+      "description": "EventLog entry ID that this message maps to."
+    }
+  },
+  "required": [
+    "to",
+    "from",
+    "timestamp",
+    "message_id",
+    "blake3_hash",
+    "token_count",
+    "agent_id",
+    "correlation_id",
+    "event_id"
+  ],
+  "additionalProperties": false
+}

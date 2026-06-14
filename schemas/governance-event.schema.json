@@ -1,0 +1,103 @@
+{
+  "$id": "https://agent-os-governance/schemas/governance-event.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Governance Event",
+  "description": "Schema defining the structure of a governance event within the Agent OS. Represents a factual record of an action, change, or decision without editorialization.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this event."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the event occurred."
+    },
+    "actor": {
+      "type": "string",
+      "description": "Identifier of the entity that triggered the event (human, agent, or system)."
+    },
+    "system": {
+      "type": "string",
+      "description": "The system or subsystem where the event originated (e.g., orchestrator, Cody, Warp, Postgres, pipeline)."
+    },
+    "type": {
+      "type": "string",
+      "description": "Classification of the event (e.g., file_change, governance_update, prompt_sent, task_completed)."
+    },
+    "context": {
+      "type": "object",
+      "description": "Structural context for the event.",
+      "properties": {
+        "repo": {
+          "type": "string",
+          "description": "Repository name where the event occurred."
+        },
+        "path": {
+          "type": "string",
+          "description": "File or resource path related to the event."
+        },
+        "branch": {
+          "type": "string",
+          "description": "Git branch context, if applicable."
+        },
+        "process": {
+          "type": "string",
+          "description": "Process or workflow name."
+        },
+        "project": {
+          "type": "string",
+          "description": "Project identifier."
+        }
+      },
+      "required": [
+        "repo",
+        "path"
+      ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "object",
+      "description": "Structured details containing the event-specific data.",
+      "additionalProperties": true
+    },
+    "links": {
+      "type": "object",
+      "description": "References to related events, processes, or tasks.",
+      "properties": {
+        "parent_event_id": {
+          "type": "string",
+          "description": "ID of the parent event that triggered this one."
+        },
+        "related_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of related event IDs."
+        },
+        "process_id": {
+          "type": "string",
+          "description": "Process this event belongs to."
+        },
+        "task_id": {
+          "type": "string",
+          "description": "Task this event is associated with."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "timestamp",
+    "actor",
+    "system",
+    "type",
+    "context",
+    "payload",
+    "links"
+  ],
+  "additionalProperties": false
+}

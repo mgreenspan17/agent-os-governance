@@ -1,0 +1,131 @@
+{
+  "$id": "https://agent-os-governance/schemas/eventlog-entry.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EventLog Entry",
+  "description": "Schema defining the structure of an EventLog entry within the Agent OS. EventLog is the single immutable, append-only source of truth for all meaningful events across systems. Every event must support replay, auditing, deduplication, and historical reconstruction.",
+  "type": "object",
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "description": "Classification of the event (e.g., governance_rule_added, tangent_added, file_updated, file_created, file_deleted, decision, approval, veto)."
+    },
+    "category": {
+      "type": "string",
+      "description": "Higher-level category for grouping events (e.g., governance, implementation, system, human, maintenance).",
+      "enum": [
+        "governance",
+        "implementation",
+        "system",
+        "human",
+        "maintenance",
+        "security",
+        "other"
+      ]
+    },
+    "source_system": {
+      "type": "string",
+      "description": "The system that generated or captured this event (e.g., Cody, Warp, orchestrator, git, pipeline)."
+    },
+    "producer_id": {
+      "type": "string",
+      "description": "Unique identifier of the agent, human, or system that produced this event."
+    },
+    "idempotency_key": {
+      "type": "string",
+      "description": "Unique key ensuring this event is processed exactly once, even if replayed."
+    },
+    "hash": {
+      "type": "string",
+      "description": "Cryptographic hash of the event payload for integrity verification."
+    },
+    "raw_payload": {
+      "type": "object",
+      "description": "The original, unmodified event data as captured by the source system.",
+      "additionalProperties": true
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the event was recorded."
+    },
+    "actor": {
+      "type": "string",
+      "description": "Human-readable name or identifier of the entity that triggered the event."
+    },
+    "context": {
+      "type": "object",
+      "description": "Structural context for the event.",
+      "properties": {
+        "repo": {
+          "type": "string",
+          "description": "Repository name."
+        },
+        "path": {
+          "type": "string",
+          "description": "File or resource path."
+        },
+        "branch": {
+          "type": "string",
+          "description": "Git branch context."
+        },
+        "process": {
+          "type": "string",
+          "description": "Process or workflow name."
+        },
+        "project": {
+          "type": "string",
+          "description": "Project identifier."
+        }
+      },
+      "required": [
+        "repo"
+      ],
+      "additionalProperties": false
+    },
+    "correlation_id": {
+      "type": "string",
+      "description": "ID linking this event to a related conversation thread or workflow."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional structured metadata not captured in other fields.",
+      "additionalProperties": true
+    },
+    "links": {
+      "type": "object",
+      "description": "References to related governance files, tangents, or events.",
+      "properties": {
+        "parent_event_id": {
+          "type": "string",
+          "description": "ID of the parent event this one derives from."
+        },
+        "related_governance": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of constitution file paths related to this event."
+        },
+        "related_tangents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of tangent IDs related to this event."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "event_type",
+    "category",
+    "source_system",
+    "producer_id",
+    "idempotency_key",
+    "hash",
+    "raw_payload",
+    "timestamp"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,87 @@
+{
+  "$id": "https://agent-os-governance/schemas/governance-rule.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Governance Rule",
+  "description": "Schema defining the structure of a governance rule within the Agent OS Constitution. Each rule represents a binding principle, policy, or behavioral constraint.",
+  "type": "object",
+  "properties": {
+    "rule_id": {
+      "type": "string",
+      "description": "Unique identifier for this governance rule."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable name of the governance rule."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed explanation of the rule's purpose and scope."
+    },
+    "category": {
+      "type": "string",
+      "description": "Classification of the rule (e.g., safety, security, coordination, hygiene).",
+      "enum": [
+        "safety",
+        "security",
+        "coordination",
+        "hygiene",
+        "operational",
+        "strategic",
+        "other"
+      ]
+    },
+    "authority_level": {
+      "type": "string",
+      "description": "The level of authority this rule holds within the governance hierarchy.",
+      "enum": [
+        "constitutional",
+        "policy",
+        "guideline",
+        "convention"
+      ]
+    },
+    "enforcement": {
+      "type": "string",
+      "description": "How strictly this rule must be followed.",
+      "enum": [
+        "mandatory",
+        "recommended",
+        "optional"
+      ]
+    },
+    "related_governance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of related governance files (e.g., constitution/other-rule.md)."
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of this rule (major.minor.patch)."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the rule was first defined."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the rule was last modified."
+    }
+  },
+  "required": [
+    "rule_id",
+    "title",
+    "description",
+    "category",
+    "authority_level",
+    "enforcement",
+    "related_governance",
+    "version",
+    "created_at",
+    "updated_at"
+  ],
+  "additionalProperties": false
+}
