@@ -1,0 +1,4 @@
+# Ignore independent AskBigMama repo
+# AskBigMama is a standalone repository with its own GitHub remote:
+# git@github.com:mgreenspan17/askbigmama.git
+askbigmama/
