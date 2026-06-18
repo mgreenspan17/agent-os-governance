@@ -15,7 +15,9 @@ Credential Broker Lite v0 provides a local, auditable pattern for temporary, sco
 
 PowerShell/SSH nested quoting made remote one-liner role tests fragile and error-prone. The self-test runner is designed so runtime validation can be performed later as a local script on the target node, rather than via remote one-liners.
 
-Remote one-liner DB role tests are disallowed in this workflow.
+Remote PowerShell -> SSH -> Bash -> psql one-liner DB role tests are disallowed for live role operations.
+
+For approval-gated live role lifecycle testing, tests must run locally on dev-node1 using the server-side runner.
 
 ## Files
 
@@ -53,3 +55,16 @@ Dry-run does not create roles, issue credentials, write to Postgres, or delete a
 ## Live Mode
 
 `--live` exists only as an explicit, separate runtime lane and requires independent approval. This repository implementation step does not execute live mode.
+
+## Future Live Test Verification Checklist
+
+Any future approval-gated live test run must verify all of the following:
+
+1. temporary role created
+2. SELECT succeeds
+3. INSERT, UPDATE, and DELETE are denied
+4. CREATE TABLE is denied
+5. permissions revoked
+6. role dropped
+7. credential file deleted
+8. no credential files remain
