@@ -1,0 +1,25 @@
+# Credential Broker Lite v0 example configuration
+# This file must not contain secrets, passwords, or full database URLs.
+
+# Base path for broker operations
+BROKER_BASE_PATH="/srv/data/agent-os/credential-broker"
+
+# Directory for temporary grant metadata
+GRANT_DIR="/srv/data/agent-os/credential-broker/grants"
+
+# Append-only audit log location
+AUDIT_LOG="/srv/data/agent-os/credential-broker/audit.log"
+
+# Local Postgres container and database names (non-secret identifiers)
+PG_CONTAINER="postgres_ssot"
+PG_DATABASE="ssot"
+PG_ADMIN_ROLE="ssot"
+
+# Readonly test scope
+READONLY_SCHEMA="public"
+READONLY_TEST_TABLE="scanner_runs"
+
+# Safety defaults
+LIVE_MODE=false
+DRY_RUN=true
+DEFAULT_TTL_MINUTES=60
