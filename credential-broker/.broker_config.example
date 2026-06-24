@@ -13,6 +13,11 @@ AUDIT_LOG="/srv/data/agent-os/credential-broker/audit.log"
 # Local Postgres container and database names (non-secret identifiers)
 PG_CONTAINER="postgres_ssot"
 PG_DATABASE="ssot"
+PG_ADMIN_ROLE="ssot"
+
+# Readonly test scope
+READONLY_SCHEMA="public"
+READONLY_TEST_TABLE="scanner_runs"
 
 # Safety defaults
 LIVE_MODE=false

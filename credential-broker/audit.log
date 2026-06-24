@@ -1,0 +1,8 @@
+2026-06-18T03:33:18Z action=SELF_TEST_DRY_RUN status=PASS role=cb_test_readonly_20260618033318_cbf1a1 note=no_db_write
+2026-06-18T03:33:18Z action=SELF_TEST_DRY_RUN status=PASS role=cb_test_readonly_20260618033318_c4ecdb note=no_db_write
+2026-06-18T03:33:18Z action=SELF_TEST_LIVE_GATE status=FAIL role=cb_test_readonly_20260618033318_911f25 note=gate_validation
+2026-06-18T03:33:19Z action=SELF_TEST_LIVE_GATE status=FAIL role=cb_test_readonly_20260618033318_147caa note=gate_validation
+2026-06-18T05:43:19Z action=SELF_TEST_DRY_RUN status=PASS role=cb_test_readonly_20260618054319_430fa7 note=no_db_write
+2026-06-18T05:43:19Z action=SELF_TEST_DRY_RUN status=PASS role=cb_test_readonly_20260618054319_bab1ba note=no_db_write
+2026-06-18T05:43:19Z action=SELF_TEST_LIVE_GATE status=FAIL role=cb_test_readonly_20260618054319_3a1dcb note=gate_validation
+2026-06-18T05:43:21Z action=SELF_TEST_LIVE_GATE status=FAIL role=cb_test_readonly_20260618054319_c0443e note=gate_validation

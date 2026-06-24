@@ -13,7 +13,9 @@ Usage:
 
 Commands:
   status                               Show local broker paths and safety defaults
-  self-test-readonly [--dry-run]       Run readonly lifecycle self-test planner (dry-run only)
+  preflight                            Run non-destructive gate checks
+  self-test-readonly [--dry-run|--live --confirm-live] [--preflight]
+                                       Run readonly lifecycle self-test
   help                                 Show this help
 
 Security:
@@ -34,10 +36,21 @@ cmd_status() {
   echo "Audit Log: ${audit_log}"
   echo "LIVE_MODE: ${LIVE_MODE:-false}"
   echo "DRY_RUN: ${DRY_RUN:-true}"
+  echo "PG_CONTAINER: ${PG_CONTAINER:-<unset>}"
+  echo "PG_DATABASE: ${PG_DATABASE:-<unset>}"
+  echo "PG_ADMIN_ROLE: ${PG_ADMIN_ROLE:-<unset>}"
+  echo "READONLY_SCHEMA: ${READONLY_SCHEMA:-public}"
+  echo "READONLY_TEST_TABLE: ${READONLY_TEST_TABLE:-scanner_runs}"
+}
+
+cmd_preflight() {
+  "${SCRIPT_DIR}/self_test_readonly.sh" --preflight
 }
 
 cmd_self_test_readonly() {
   local mode="--dry-run"
+  local confirm_live="false"
+  local preflight="false"
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -46,8 +59,16 @@ cmd_self_test_readonly() {
         shift
         ;;
       --live)
-        echo "ERROR: broker.sh only permits self-test-readonly --dry-run in this lane." >&2
-        exit 1
+        mode="--live"
+        shift
+        ;;
+      --confirm-live)
+        confirm_live="true"
+        shift
+        ;;
+      --preflight)
+        preflight="true"
+        shift
         ;;
       *)
         echo "ERROR: unknown option for self-test-readonly: $1" >&2
@@ -55,6 +76,16 @@ cmd_self_test_readonly() {
         ;;
     esac
   done
+
+  if [[ "${preflight}" == "true" ]]; then
+    "${SCRIPT_DIR}/self_test_readonly.sh" --preflight
+    return
+  fi
+
+  if [[ "${mode}" == "--live" && "${confirm_live}" == "true" ]]; then
+    "${SCRIPT_DIR}/self_test_readonly.sh" --live --confirm-live
+    return
+  fi
 
   "${SCRIPT_DIR}/self_test_readonly.sh" "${mode}"
 }
@@ -67,6 +98,9 @@ fi
 case "${1:-help}" in
   status)
     cmd_status
+    ;;
+  preflight)
+    cmd_preflight
     ;;
   self-test-readonly)
     shift
