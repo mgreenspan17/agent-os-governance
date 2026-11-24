@@ -1,0 +1,5 @@
+# vt-scan dependencies (pinned upper bounds to keep deterministic in CI)
+typer>=0.12,<0.16
+requests>=2.31,<3
+# Phase A test stack
+pytest>=7.4,<9
