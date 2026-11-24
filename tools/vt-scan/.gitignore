@@ -1,0 +1,21 @@
+# Local venv (created only for validation, never shipped)
+.venv/
+venv/
+env/
+
+# Python build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local SQLite caches / event logs (lives under the user's $HOME in real use,
+# but tests may drop a temp file here)
+cache.sqlite
+eventlog.jsonl
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
